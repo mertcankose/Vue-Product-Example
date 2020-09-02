@@ -3,7 +3,7 @@
     <h3 class="text-center">Eklenen Ürünlerin Listesi</h3>
     <hr />
     <div class="row product-container">
-      <div v-for="show in shows" class="col-md-2 card">
+      <div v-for="(show,index) in shows" class="col-md-2 card">
         <img
           class="card-img-top"
           :src="show.photo == null ? '/src/assets/default.png' : show.photo"
@@ -27,6 +27,7 @@
           </small>
           <br />
         </div>
+        <button class="deleteButton" @click="deleteProduct(index)">Delete Product</button>
       </div>
     </div>
   </div>
@@ -39,6 +40,12 @@ export default {
     return {
       shows: [],
     };
+  },
+  methods: {
+    deleteProduct(value) {
+      this.shows.splice(value, 1);
+      eventBus.activatedProgressBar(this.shows.length); //again control array and update progress bar
+    },
   },
   created() {
     eventBus.$on("enteredInfos", (value) => {
@@ -53,5 +60,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.deleteButton {
+  border: none;
+  background-color: aquamarine;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #4a4646;
+}
 </style>
