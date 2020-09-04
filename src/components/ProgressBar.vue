@@ -31,7 +31,6 @@ export default {
     eventBus.$on("activatedProgressBar", (value) => {
       this.progress = value * 10;
       this.currentItem = value;
-      console.log(this.progress);
     });
   },
 };
