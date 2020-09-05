@@ -3,7 +3,6 @@
     <div class="card-body tex-center d-flex align-items-center flex-column">
       <img
         height="120"
-        max-width="230"
         class="img-responsive text-center mb-3"
         :src="product.selectedImage == null ? '/src/assets/default.png' : product.selectedImage"
       />
