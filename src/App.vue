@@ -54,6 +54,10 @@ body {
   max-width: 15.666667% !important;
 }
 
+.col-sm-6 {
+  max-width: 50.666667% !important;
+}
+
 .product-container {
   margin-left: 15px;
 }

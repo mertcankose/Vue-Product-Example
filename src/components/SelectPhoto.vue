@@ -2,7 +2,7 @@
   <div class="card offset-2 col-md-3">
     <div class="card-body tex-center d-flex align-items-center flex-column">
       <img
-        height="120"
+        height="110"
         class="img-responsive text-center mb-3"
         :src="product.selectedImage == null ? '/src/assets/default.png' : product.selectedImage"
       />

@@ -3,7 +3,7 @@
     <h3 class="text-center">Eklenen Ürünlerin Listesi</h3>
     <hr />
     <div class="row product-container">
-      <div v-for="(show,index) in shows" :key="index" class="col-sm-2 card">
+      <Product v-for="(show,index) in shows">
         <img
           class="card-img-top"
           :src="show.photo == null ? '/src/assets/default.png' : show.photo"
@@ -28,14 +28,18 @@
           <br />
         </div>
         <button class="deleteButton" @click="deleteProduct(index)">Delete Product</button>
-      </div>
+      </Product>
     </div>
   </div>
 </template>
 
 <script>
 import { eventBus } from "../main";
+import Product from "./Product";
 export default {
+  components: {
+    Product,
+  },
   data() {
     return {
       shows: [],
