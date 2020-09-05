@@ -3,7 +3,7 @@
     <h3 class="text-center">Eklenen Ürünlerin Listesi</h3>
     <hr />
     <div class="row product-container">
-      <div v-for="(show,index) in shows" class="col-md-2 card">
+      <div v-for="(show,index) in shows" :key="index" class="card">
         <img
           class="card-img-top"
           :src="show.photo == null ? '/src/assets/default.png' : show.photo"
@@ -61,6 +61,9 @@ export default {
 </script>
 
 <style scoped>
+.product-container div {
+  margin-right: 10px;
+}
 .deleteButton {
   border: none;
   background-color: aquamarine;
